@@ -1,0 +1,40 @@
+<?php
+
+declare(strict_types=1);
+
+namespace SendGridSDK\Responses\V3\Campaigns\ByCampaignId\Schedules;
+
+/**
+ * Schedule a Campaign response
+ */
+final class Post extends \Dmorenof\SdkRuntime\DTO
+{
+    public const array REQUIRED_FIELDS = [
+        'id',
+        'send_at',
+        'status',
+    ];
+
+    /**
+     * The campaign ID.
+     */
+    public int $id;
+    /**
+     * The date time you scheduled your campaign to be sent.
+     */
+    public int $send_at;
+    /**
+     * The status of your campaign.
+     */
+    public \SendGridSDK\Enums\LmcCampaignsStatus $status;
+
+    protected function assignMember(string $name, mixed $value): void
+    {
+        match ($name) {
+            'id' => is_int($value) ? $this->id = $value : parent::assignMember($name, $value),
+            'send_at' => is_int($value) ? $this->send_at = $value : parent::assignMember($name, $value),
+            'status' => is_string($value) ? $this->status = \SendGridSDK\Enums\LmcCampaignsStatus::from($value) : parent::assignMember($name, $value),
+            default => parent::assignMember($name, $value),
+        };
+    }
+}
