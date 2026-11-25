@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace SendGridSDK\Collections\V3\Teammates\Pending\Get;
 
+/** @extends \Dmorenof\SdkRuntime\TypedArray<\SendGridSDK\Responses\V3\Teammates\Pending\Get\PendingResultResponse> */
 final class PendingResultCollection extends \Dmorenof\SdkRuntime\TypedArray
 {
     protected string $expected_type = \SendGridSDK\Responses\V3\Teammates\Pending\Get\PendingResultResponse::class;

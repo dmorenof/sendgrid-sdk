@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace SendGridSDK\Collections\Errors\V3\Marketing\Contacts\Imports\PutStatus400;
 
+/** @extends \Dmorenof\SdkRuntime\TypedArray<\SendGridSDK\DTOs\ContactsError> */
 final class PutStatus400ErrorsCollection extends \Dmorenof\SdkRuntime\TypedArray
 {
     protected string $expected_type = \SendGridSDK\DTOs\ContactsError::class;

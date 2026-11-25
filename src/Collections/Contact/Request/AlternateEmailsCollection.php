@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace SendGridSDK\Collections\Contact\Request;
 
+/** @extends \Dmorenof\SdkRuntime\TypedArray<string> */
 final class AlternateEmailsCollection extends \Dmorenof\SdkRuntime\TypedArray
 {
     protected string $expected_type = 'string';
